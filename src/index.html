@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="bulma.css">
+    <title>Random Choice Picker</title>
+</head>
+
+<body>
+
+    <div class="columns is-flex-is-direction-column is-10-mobile is-align-items-center is-justify-content-center">
+        <div class="column is-flex-direction-column is-justify-content-center is-align-items-center has-text-centered">
+
+            <!-- TITLES -->
+            <div id="header" class="column pt-3 px-2">
+                <h3 id="main-title" class="title is-4 mb-4 px-4">Enter all of the choices divided by a
+                    dot</h3>
+                <h3 id="desk-title" class="title is-4 is-hidden-touch mt-4 mb-4 px-4">Press enter when
+                    you're done</h3>
+
+                <!-- TEXTAREA -->
+                <div class="column is-6-tablet is-offset-3">
+                    <div class="field pt-3">
+                        <div class="control">
+                            <textarea id="textarea" class="textarea has-fixed-size"
+                                placeholder="Enter choices here... &#10(1.2.3.4.5.you.she.he ...etc)"
+                                rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- WARN TAGS -->
+            <div class="column is-flex is-justify-content-center p-0">
+                <div id="warn-tags" class="notification is-warning is-hidden"></div>
+            </div>
+            <!-- <div class="column m-0 p-0">
+                <h3 id="warn-tags" class="title has-text-danger is-4 is-size-5-mobile"></h3>
+            </div> -->
+
+            <!-- TAGS CONTAINER -->
+            <div class="column is-8 is-offset-2">
+                <div id="tags" class="tags are-large is-justify-content-center px-2">
+                    <!-- here goes the choices -->
+                </div>
+            </div>
+
+            <!-- TAGS COUNT -->
+            <div class="column m-0 p-0">
+                <p id="count" class="is-5 is-size-6-mobile mb-4"></p>
+                <!-- <h3 id="warn-repeat" class="title has-text-danger is-4 is-size-5-mobile"></h3> -->
+            </div>
+
+            <div class="column is-flex is-justify-content-center p-0">
+                <div id="warn-repeat" class="notification is-danger is-hidden"></div>
+            </div>
+
+            <!-- REPEATED CONTAINER -->
+            <div class="column is-8 is-offset-2">
+                <div id="repeat-container" class="tags are-large is-justify-content-center px-4">
+                    <!-- here goes the repeated items -->
+                </div>
+            </div>
+
+            <!-- BUTTON MOBILE DEVICES -->
+            <div class="column mt-4">
+                <button id="btn-mobile" class="button is-info is-medium is-hidden-desktop">Random choice</button>
+            </div>
+
+            <!-- DARK MODE TOGGLE -->
+            <div class="column mt-6">
+                <span id="mode-icon" class="icon">
+                    <i class="fas fa-adjust fa-2x"></i>
+                </span>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal is-clipped">
+        <div class="modal-background"></div>
+
+        <div class="modal-card">
+
+            <header id="modal-header" class="modal-card-head has-text-centered">
+                <p class="modal-card-title is-size-4">The random choice is:</p>
+            </header>
+
+            <section id="modal-card" class="modal-card-body has-text-centered">
+                <!-- Content ... -->
+                <p id="result" class="is-size-2 has-text-weight-bold"></p>
+            </section>
+
+            <footer id="modal-footer" class="modal-card-foot is-flex is-justify-content-center">
+                <button id="btn-new" class="button is-info">New random</button>
+            </footer>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* VARIABLES */
+:root {
+    --light-grey-color: #b5b5b5;
+    --dark-grey-color: #4a4a4a;
+    --dark-color: #363636;
+    --black-color: #000;
+    --light-color: #f5f5f5;
+    --white-color: #fff;
+    --warning-color: #ffdd57;
+    --warn-light-color: #fffbeb;
+    --warn-dark-color: #947600;
+    --danger-color: #ff3860;
+    --danger-light-color: #feecf0;
+    --danger-dark-color: #cc0f35;
+    --success-color: #23d160;
+    --success-light-color: #effaf3;
+}
+
+
+
+/* GLOBAL */
+html, body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+body {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    padding: 1.25rem 0;
+    transition: 0.5s ease;
+}
+
+.columns {
+    height: 100vh;
+}
+
+.button {
+    font-family: 'Poppins', sans-serif;
+}
+
+#textarea {
+    background-color: var(--white-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+h3 {
+    color: var(--dark-color);
+}
+
+#mode-icon {
+    cursor: pointer;
+}
+
+#mode-icon:active {
+    transform: scale(0.96);
+}
+
+#modal-header{
+    background-color: var(--light-color);
+}
+
+#modal-header p {
+    color: var(--success-color);
+}
+
+#modal-card {
+    background-color: var(--white-color);
+    color: var(--success-color);
+}
+
+#modal-footer {
+    background-color: var(--light-color);
+}
+
+
+
+/* MODAL ANIMATION */
+.modal-background {
+    backdrop-filter: blur(10px);
+}
+
+.modal-card {
+    width: 500px;
+    max-width: 94%;
+    animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-top {
+    0% {
+      transform: translateY(-1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+
+
+/* LIGHT MODE */
+/* body.light-mode {
+    background-color: var(--white-color);
+    color: var(--dark-color);
+}
+
+h3.light-mode {
+    color: var(--dark-color);
+}
+
+textarea.light-mode {
+    background-color: var(--light-color);
+}
+
+#warn-tags.light-mode {
+    background-color: var(--warn-light-color);
+    color: var(--warn-dark-color);
+} 
+
+#warn-repeat.light-mode {
+    background-color: var(--danger-light-color);
+    color: var(--danger-dark-color);
+}
+
+#modal-header.light-mode {
+    background-color: var(--light-color);
+    color: var(--success-color);
+}
+
+#modal-card.light-mode {
+    background-color: var(--white-color);
+    color: var(--success-color);
+}
+
+#modal-footer.light-mode {
+    background-color: var(--light-color);
+} */
+
+
+
+/* DARK MODE */
+body.dark-mode {
+    background-color: var(--black-color);
+    color: var(--light-color);
+    transition: 0.4s ease;
+}
+
+h3.dark-mode {
+    color: var(--light-color);
+}
+
+#textarea.dark-mode {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    border: none;
+}
+
+#textarea.dark-mode::placeholder {
+    color: var(--light-grey-color);
+}
+
+#textarea.dark-mode:disabled {
+    opacity: 0.5;
+}
+
+#modal-header.dark-mode {
+    background-color: var(--black-color);
+}
+
+#modal-card.dark-mode {
+    background-color: var(--dark-color);
+}
+
+#modal-footer.dark-mode {
+    background-color: var(--black-color);
+}
+
+
+
