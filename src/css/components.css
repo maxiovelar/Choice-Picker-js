@@ -102,82 +102,30 @@ h3 {
 
 
 
-/* LIGHT MODE */
-/* body.light-mode {
-    background-color: var(--white-color);
-    color: var(--dark-color);
+/* COLOR THEME */
+@media (prefers-color-scheme: dark) {
+    
+    /* DARK MODE */
+    body { background-color: var(--black-color); color: var(--light-color); transition: 0.4s ease; }
+    #main-title { color: var(--light-color); }
+    #desk-title { color: var(--light-color); }
+    #textarea { background-color: var(--dark-color); color: var(--light-color); border: none; }
+    #textarea::placeholder { color: var(--light-grey-color); }
+    #textarea:disabled { opacity: 0.5; }
+    #modal-header { background-color: var(--black-color); }
+    #modal-card { background-color: var(--dark-color); }
+    #modal-footer { background-color: var(--black-color); }
+    
+    /* LIGHT MODE */
+    body.light-mode { background-color: var(--light-color); color: var(--dark-color); }
+    #main-title.light-mode { color: var(--dark-color); }
+    #desk-title.light-mode { color: var(--dark-color); }
+    #textarea.light-mode { background-color: var(--white-color); color: var(--dark-color); }
+    #textarea.light-mode::placeholder { color: var(--light-grey-color); }
+    #textarea.light-mode:disabled { opacity: 0.8; }
+    #modal-header.light-mode { background-color: var(--light-color); color: var(--success-color); }
+    #modal-card.light-mode { background-color: var(--white-color); color: var(--success-color); }
+    #modal-footer.light-mode { background-color: var(--light-color); }
+
 }
-
-h3.light-mode {
-    color: var(--dark-color);
-}
-
-textarea.light-mode {
-    background-color: var(--light-color);
-}
-
-#warn-tags.light-mode {
-    background-color: var(--warn-light-color);
-    color: var(--warn-dark-color);
-} 
-
-#warn-repeat.light-mode {
-    background-color: var(--danger-light-color);
-    color: var(--danger-dark-color);
-}
-
-#modal-header.light-mode {
-    background-color: var(--light-color);
-    color: var(--success-color);
-}
-
-#modal-card.light-mode {
-    background-color: var(--white-color);
-    color: var(--success-color);
-}
-
-#modal-footer.light-mode {
-    background-color: var(--light-color);
-} */
-
-
-
-/* DARK MODE */
-body.dark-mode {
-    background-color: var(--black-color);
-    color: var(--light-color);
-    transition: 0.4s ease;
-}
-
-h3.dark-mode {
-    color: var(--light-color);
-}
-
-#textarea.dark-mode {
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    border: none;
-}
-
-#textarea.dark-mode::placeholder {
-    color: var(--light-grey-color);
-}
-
-#textarea.dark-mode:disabled {
-    opacity: 0.5;
-}
-
-#modal-header.dark-mode {
-    background-color: var(--black-color);
-}
-
-#modal-card.dark-mode {
-    background-color: var(--dark-color);
-}
-
-#modal-footer.dark-mode {
-    background-color: var(--black-color);
-}
-
-
 

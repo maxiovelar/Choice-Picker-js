@@ -1,4 +1,4 @@
-import { welcome } from './js/components';
+import './js/components';
 import './bulma.css';
 
 
@@ -385,15 +385,64 @@ btnMobile.addEventListener('click', () => {
 
 
 
-// DARK MODE TOGGLE
-darkModeToggle.addEventListener('click', () => {
+// USER THEME PREFERENCE 
+const configUser = window.matchMedia('(prefers-color-scheme: dark)');
+const localConfig = localStorage.getItem('mode');
+
+if (localConfig === 'dark') {
+
     document.body.classList.toggle('dark-mode');
     mainTitle.classList.toggle('dark-mode');
     deskTitle.classList.toggle('dark-mode');
     textarea.classList.toggle('dark-mode');
-    warnTags.classList.toggle('dark-mode');
-    warnRepeat.classList.toggle('dark-mode');
     modalHeader.classList.toggle('dark-mode');
     modalCard.classList.toggle('dark-mode');
     modalFooter.classList.toggle('dark-mode');
+
+} else if (localConfig === 'light') {
+
+    document.body.classList.toggle('light-mode');
+    mainTitle.classList.toggle('light-mode');
+    deskTitle.classList.toggle('light-mode');
+    textarea.classList.toggle('light-mode');
+    modalHeader.classList.toggle('light-mode');
+    modalCard.classList.toggle('light-mode');
+    modalFooter.classList.toggle('light-mode');
+
+}
+
+
+// DARK MODE TOGGLE
+darkModeToggle.addEventListener('click', () => {
+
+    let colorMode;
+
+    if (configUser.matches) {
+
+        document.body.classList.toggle('light-mode');
+        mainTitle.classList.toggle('light-mode');
+        deskTitle.classList.toggle('light-mode');
+        textarea.classList.toggle('light-mode');
+        modalHeader.classList.toggle('light-mode');
+        modalCard.classList.toggle('light-mode');
+        modalFooter.classList.toggle('light-mode');
+
+        colorMode = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+
+    } else {
+        
+        document.body.classList.toggle('dark-mode');
+        mainTitle.classList.toggle('dark-mode');
+        deskTitle.classList.toggle('dark-mode');
+        textarea.classList.toggle('dark-mode');
+        modalHeader.classList.toggle('dark-mode');
+        modalCard.classList.toggle('dark-mode');
+        modalFooter.classList.toggle('dark-mode');
+
+        colorMode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    
+    }
+
+    localStorage.setItem('mode', colorMode);
+
 });
