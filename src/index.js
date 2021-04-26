@@ -385,11 +385,8 @@ btnMobile.addEventListener('click', () => {
 
 
 
-// USER THEME PREFERENCE 
-const configUser = window.matchMedia('(prefers-color-scheme: dark)');
-const localConfig = localStorage.getItem('mode');
-
-if (localConfig === 'dark') {
+// THIS FUNCTION ADD OR REMOVE THE DARK-MODE CLASS
+const changeMode = () => {
 
     document.body.classList.toggle('dark-mode');
     mainTitle.classList.toggle('dark-mode');
@@ -399,17 +396,19 @@ if (localConfig === 'dark') {
     modalCard.classList.toggle('dark-mode');
     modalFooter.classList.toggle('dark-mode');
 
-} else if (localConfig === 'light') {
-
-    document.body.classList.toggle('light-mode');
-    mainTitle.classList.toggle('light-mode');
-    deskTitle.classList.toggle('light-mode');
-    textarea.classList.toggle('light-mode');
-    modalHeader.classList.toggle('light-mode');
-    modalCard.classList.toggle('light-mode');
-    modalFooter.classList.toggle('light-mode');
-
 }
+
+
+
+// SET USER COLOR MODE PREFERENCE IN LOCAL STORAGE 
+const localConfig = localStorage.getItem('mode');
+
+if (localConfig === 'dark') {
+
+    changeMode();
+
+} 
+
 
 
 // DARK MODE TOGGLE
@@ -417,29 +416,15 @@ darkModeToggle.addEventListener('click', () => {
 
     let colorMode;
 
-    if (configUser.matches) {
+    if (document.body.classList.contains('dark-mode')) {
 
-        document.body.classList.toggle('light-mode');
-        mainTitle.classList.toggle('light-mode');
-        deskTitle.classList.toggle('light-mode');
-        textarea.classList.toggle('light-mode');
-        modalHeader.classList.toggle('light-mode');
-        modalCard.classList.toggle('light-mode');
-        modalFooter.classList.toggle('light-mode');
-
-        colorMode = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+        changeMode();
+        colorMode = 'light';
 
     } else {
         
-        document.body.classList.toggle('dark-mode');
-        mainTitle.classList.toggle('dark-mode');
-        deskTitle.classList.toggle('dark-mode');
-        textarea.classList.toggle('dark-mode');
-        modalHeader.classList.toggle('dark-mode');
-        modalCard.classList.toggle('dark-mode');
-        modalFooter.classList.toggle('dark-mode');
-
-        colorMode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+        changeMode();
+        colorMode = 'dark';
     
     }
 
